@@ -3,6 +3,9 @@ package Bencher::Scenario::ArchiveTarModules::ListMemUsage;
 # DATE
 # VERSION
 
+use strict;
+use warnings;
+
 use Bencher::ScenarioUtil::ArchiveTarModules;
 
 my $modules  = \%Bencher::ScenarioUtil::ArchiveTarModules::Modules;

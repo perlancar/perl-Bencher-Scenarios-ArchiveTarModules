@@ -3,7 +3,6 @@ package Bencher::ScenarioUtil::ArchiveTarModules;
 # DATE
 # VERSION
 
-use 5.010_001;
 use strict;
 use warnings;
 
