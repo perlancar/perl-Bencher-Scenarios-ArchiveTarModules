@@ -49,6 +49,31 @@ _
             return @res;
 _
     },
+
+    'Archive::Tar::Wrapper' => {
+        description => <<'_',
+
+Archive::Tar::Wrapper is an API wrapper around the 'tar' command line utility.
+It never stores anything in memory, but works on temporary directory structures
+on disk instead. It provides a mapping between the logical paths in the tarball
+and the 'real' files in the temporary directory on disk.
+
+_
+        code_template_list_files => <<'_',
+            my $filename = <filename>;
+            my $obj = Archive::Tar::Wrapper->new;
+            my @res;
+            $obj->list_reset;
+            while (my $entry = $obj->list_next) {
+                my ($tar_path, $phys_path) = @$entry;
+                push @res, {
+                    name => $tar_path,
+                    size => (-s $phys_path),
+                };
+            }
+            return @res;
+_
+    },
 );
 
 1;

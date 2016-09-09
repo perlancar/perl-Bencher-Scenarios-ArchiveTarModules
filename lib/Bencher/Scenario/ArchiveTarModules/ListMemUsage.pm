@@ -30,7 +30,7 @@ our $scenario = {
     ],
     datasets => $datasets,
     with_process_size => 1,
-    precision => 2,
+    precision => 6,
 };
 
 1;
